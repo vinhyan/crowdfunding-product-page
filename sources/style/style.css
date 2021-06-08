@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    /*-------- Color scheme ---------*/
+    /* Primary */
+    --cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    /* Neutral */
+
+    --black: hsl(0, 0%, 0%);
+    --gray: hsl(0, 0%, 48%);
+    --light-gray: rgb(236, 236, 236);
+}
+
+
+
+body {
+    font-size: 16px;
+    font-family: 'Commissioner', sans-serif;
+    background-color: rgb(235, 235, 235);
+}
+
+body.modal-on {
+    overflow: hidden;
+}
+
+body a {
+    text-decoration: none;
+ 
+}
+
+
+body p {
+    color: var(--gray);
+    line-height: 1.5em;
+}
+
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    min-height: 50vh;
+    background-image: url(../images/image-hero-mobile.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.logo {
+    min-width: 120px;
+    max-height: 20px;
+    cursor: pointer;
+}
+
+
+.burger {
+    width: 18px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    
+}
+
+
+nav {
+    display: none;
+}
+
+
+.mobile-nav {
+    display: block;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; 
+    width: 90%;
+    height: 70%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.3) 50px 0px 100px 100px;
+    z-index: 50;  
+}
+
+
+.nav-menu li {
+    list-style: none;
+    height: 33%;
+    padding: 20px;
+}
+
+
+.menu-line {
+    border-top: double 0.5px rgb(236, 236, 236);
+    border-bottom: double 0.5px rgb(236, 236, 236);
+}
+
+
+.nav-menu a {
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}
+
+
+/*--------- Project Overview --------------*/
+
+.container {
+    position: relative;
+    border: solid 1px rgb(236, 236, 236);
+    border-radius: 10px;;
+    background-color: white;
+    padding: 40px 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.proj-overview {
+    top: -60px;
+    text-align: center;
+}
+
+
+.master-logo {
+    position: relative;
+    top: -70px;
+}
+
+.proj-overview h3 {
+    font-size: 1.5em;
+    position: relative;
+    top: -50px;
+    
+}
+
+.proj-overview p {
+    position: relative;
+    top: -25px;
+    color: var(--gray);
+    line-height: 1.5em;
+}
+
+.cyan-select {
+    background-color: var(--cyan);
+    width: 200px;
+    max-width: 80%;
+    
+}
+
+.bookmark-btn {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    
+
+}
+
+.bookmarked {
+    filter: invert(0.30);
+
+}
+
+
+
+.statistic {
+    text-align: center;
+    top: -30px;
+}
+
+.statistic p {
+    padding: 10px;
+}
+
+
+.backed-amount, .no-of-backers, .days-left {
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+    display: block;
+    padding-bottom: 20px;
+    
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+    background-color: var(--gray);
+    margin: 15px auto;
+}
+
+
+
+.progress-bar {
+    background-color: rgb(235, 235, 235);
+    /* height: 12px; */
+    border-radius: 10px;
+    position: relative;
+    height: 12px;
+    padding: 0;
+    margin: 10px 0;
+
+}
+
+.progress {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 80%;
+    background-color: var(--cyan);
+    overflow: hidden;
+    border-radius: 12px;
+   
+    
+}
+
+.about h3 {
+    padding-bottom: 20px;
+}
+
+.about p {
+    padding: 15px 0;
+}
+
+
+.proj-container {
+    width: 100%;
+    border: solid 1px rgb(218, 218, 218);
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin: 20px 0;
+}
+
+
+.cyan-text {
+    color: var(--cyan);
+    padding: 10px 0;
+}
+
+.reward-no {
+    font-size: 2em;
+    color: black;
+    font-weight: 700;
+    
+}
+
+.unavailable {
+    opacity: 0.3;
+}
+
+.inactive {
+    width: 200px;
+    max-width: 80%;
+    background-color: hsl(0, 0%, 48%);
+}
+
+/*------------- Pop-up modal section ---------------------*/
+
+
+
+.pop-up-container {
+    position: fixed;
+    width: 90%;
+    height: 80%;
+    overflow-Y: auto;    
+    background: white;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.3) 50px 0px 100px 100px;
+    /* display: none; */
+}
+
+/* .pop-up-container::-webkit-scrollbar {
+    display: none;
+} */
+
+/* 
+    For desktop only: 
+
+    .content-box {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-radius: 10px;
+
+} */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    
+    
+}
+
+.overlay.overlay-active {
+    opacity: 1;
+    pointer-events: all;
+    
+}
+
+/*-------Project modal-------*/
+
+.project-modal {
+    z-index: 50;
+    /* display: none; */
+
+}
+
+.project-modal.active {
+    transform: translate(-50%,-50%) scale(1);
+
+}
+
+
+.close {
+    font-size: 1.7em;
+    color: var(--gray);
+    position: absolute;
+    right: 20px;
+    /* for desktop only: right: 50px; */
+    transform: rotate(45deg);
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.project-modal h4 {
+    padding: 10px 0;
+
+}
+
+.project-modal p {
+    padding: 10px 0;
+}
+
+
+.border {
+    width: 100%;
+    border: solid 1px rgb(218, 218, 218);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.border.highlight {
+    border: solid 1px var(--cyan);
+
+}
+
+.proj-modal-container {
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.project-title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+
+.radio-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    
+}
+
+.radio-container > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+}
+
+.radio-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border: solid 1px var(--light-gray);
+    border-radius: 50%;
+
+    
+}
+
+
+.radio-container input[type=radio]:checked ~ .radio-btn {
+    background-color: white;
+
+}
+
+.radio-btn:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+}
+
+
+.radio-container input[type=radio]:checked ~ .radio-btn:after {
+    display: block;
+}
+
+.radio-container .radio-btn:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cyan);
+    
+}
+
+
+.reward-no-small {
+    font-size: 1.5em;
+    color: black;
+    font-weight: 700;
+        
+}
+
+form {
+    text-align: center;
+    position: relative;
+
+}
+
+.pledge-container-top-line {
+    border-top: solid 2px var(--light-gray);
+    width: 100%;
+    padding: 20px;
+    display: none;
+}
+
+.pledge-container-top-line.active {
+    display: block;
+}
+
+
+.pledge-amount {
+    display: inline-block; 
+    position: relative;
+}
+
+
+
+input[type=text] {
+    border: solid 2px var(--light-gray);
+    border-radius: 50px;
+    height: 56px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 35px;
+    font-size: 1rem;
+    min-width: 10%;
+    width: 100px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 5px;
+    
+}
+
+.static-value {
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+input[type=text]:focus {
+    outline: none;
+    border: solid 2px var(--dark-cyan);
+    
+}
+
+
+input[type=submit] {
+    border: none;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    margin: 5px;
+
+    
+
+}
+
+.cyan-continue {
+    background-color: var(--cyan);
+    width: 120px;
+    
+}
+
+/*------Completed modal------*/
+
+.success {
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+
+.success > * {
+    margin: 15px 0;
+}
+
