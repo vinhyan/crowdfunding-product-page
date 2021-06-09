@@ -13,7 +13,6 @@ const submitPledgeForms = document.querySelectorAll('.pledge-form');
 const successModal = document.querySelector('.success');
 const successCloseBtn = document.querySelector('.success .cyan-continue');
 
-console.log(successCloseBtn)
 
 
 const app = () => {
@@ -146,7 +145,8 @@ const app = () => {
 
 
     submitPledgeForms.forEach(form => {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
             close();
             successModal.classList.add('activate');
             overlay.classList.add('overlay-active');
