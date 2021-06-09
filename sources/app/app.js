@@ -8,10 +8,12 @@ const bookmark = document.querySelector('.bookmark-btn');
 const rewardButtons = document.querySelectorAll('.cyan-select');
 const overlay = document.querySelector('.overlay');
 const radioBtns = document.querySelectorAll('.default-radio');
-// const radioBtns = document.querySelectorAll('input[type=radio]');
 const borders = document.querySelectorAll('.border');
+const submitPledgeForms = document.querySelectorAll('.pledge-form');
+const successModal = document.querySelector('.success');
+const successCloseBtn = document.querySelector('.success .cyan-continue');
 
-
+console.log(successCloseBtn)
 
 
 const app = () => {
@@ -21,19 +23,24 @@ const app = () => {
 
     burger.addEventListener('click', () => {
         nav.classList.toggle("mobile-nav");
+        if (nav.classList.contains('mobile-nav')) {
+            overlay.classList.add('overlay-active');
+            body.classList.add('modal-on');
+
+        } 
         
     });
 
-    backProjectBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    
+
+    const open = () => {
         projectModal.classList.add('active');
         overlay.classList.add('overlay-active');
         body.classList.add('modal-on');
 
+    }
 
-    });
-
-    closeModal.addEventListener('click', () => {
+    const close = () => {
         projectModal.classList.remove('active');
         overlay.classList.remove('overlay-active');
         body.classList.remove('modal-on');
@@ -45,9 +52,29 @@ const app = () => {
             if (border.classList.contains('highlight')) {
                 border.classList.remove('highlight')
             }
+
+            const selectedPledge = border.querySelector('.pledge-container-top-line');
+
+            if (selectedPledge !== null && selectedPledge.classList.contains('active')) {
+                selectedPledge.classList.remove('active')
+            }
+            
+            
         })
 
+        successModal.classList.remove('activate');
+
+    };
+
+   
+
+    backProjectBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        open();
+
     });
+
+    closeModal.addEventListener('click', close);
 
     bookmark.addEventListener('click', (e) => {
         e.preventDefault();
@@ -60,29 +87,19 @@ const app = () => {
         const currentBtnId = rewardButton.id;
         rewardButton.addEventListener('click', (e) => {
             e.preventDefault();
-            projectModal.classList.add('active');
-            overlay.classList.add('overlay-active');
-            body.classList.add('modal-on');
+            open();
 
         });
 
     });
 
     overlay.addEventListener('click', () => {
-        projectModal.classList.remove('active');
-        overlay.classList.remove('overlay-active');
-        body.classList.remove('modal-on');
-        radioBtns.forEach(radioBtn => {
-            radioBtn.checked = null;
-        })
-        borders.forEach(border => {
-            if (border.classList.contains('highlight')) {
-                border.classList.remove('highlight')
-            }
-        })
-
+        nav.classList.remove('mobile-nav');
+        close();
 
     });
+
+    
 
     
 
@@ -94,10 +111,6 @@ const app = () => {
         // const selectedPledge = selectedBorder.lastElementChild;
         const selectedPledge = selectedBorder.querySelector('.pledge-container-top-line');
         const currentBtnId = radioBtn.id;
-
-        console.log(selectedBorder);
-        console.log(selectedPledge);
-
         
         radioBtn.addEventListener('click', () => {
 
@@ -122,26 +135,38 @@ const app = () => {
                 }
                 
 
-                // if (btn.id !== currentBtnId) {
-                //     console.log(btn.id);
-                //     console.log(btn);
-                //     const prevBorder = btn.closest('.border');
-                //     prevBorder.classList.remove('highlight');
-
-                // }
                 
-                // btn.checked = false;
             })
            
             
         })
 
-   
-
-        
-        
       
     })
+
+
+    submitPledgeForms.forEach(form => {
+        form.addEventListener('submit', () => {
+            close();
+            successModal.classList.add('activate');
+            overlay.classList.add('overlay-active');
+            body.classList.add('modal-on');
+
+            
+        })
+    })
+
+    successCloseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        successModal.classList.remove('activate');
+        overlay.classList.remove('overlay-active');
+        body.classList.remove('modal-on');
+
+
+
+    })
+
+
 
 
 

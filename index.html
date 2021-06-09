@@ -127,8 +127,8 @@
 
     <!-- Selection modal start -->
     <div class="project-modal pop-up-container">
+      <div class="close">&times;</div>
       <div class="content-box">
-        <div class="close">+</div>
         <h4>
           Back this project
         </h4>
@@ -151,6 +151,19 @@
               Choose to support us without a reward if you simply believe in our project. As a backer, 
               you will be signed up to receive product updates via email.
             </p>
+          </div>
+          <!-- Selected pledge start -->
+          <div class="pledge-container-top-line">
+            <form class="pledge-form">
+              <p>
+                Receive the latest news and updates about our products
+              </p>
+              <div class="subscribe">
+                <input type="text" class="email" placeholder="Email">
+              </div>
+              <input class="btn cyan-continue" type="submit" value="Subscribe"></input>
+            </form>
+          <!-- Selected pledge end -->  
           </div>
         </div>
       
@@ -181,12 +194,12 @@
           </div>
           <!-- Selected pledge start -->
           <div class="pledge-container-top-line">
-            <form>
+            <form class="pledge-form">
               <p for="bamboo-stand">
                 Enter your pledge
               </p>
               <div class="pledge-amount">
-                <input type="text">
+                <input type="text" class="amount">
                 <label class="static-value">$</label>
               </div>
               <input class="btn cyan-continue" type="submit" value="Continue"></input>
@@ -221,12 +234,12 @@
           </div>
               <!-- Selected pledge start -->
           <div class="pledge-container-top-line">
-            <form>
+            <form class="pledge-form">
               <p for="bamboo-stand">
                 Enter your pledge
               </p>
               <div class="pledge-amount">
-                <input type="text">
+                <input type="text" class="amount">
                 <label class="static-value">$</label>
               </div>
               <input class="btn cyan-continue" type="submit" value="Continue"></input>
@@ -261,18 +274,20 @@
           </div>
           <!-- Selected pledge  start -->
           <div class="pledge-container-top-line">
-            <form>
+            <form class="pledge-form">
               <p for="bamboo-stand">
                 Enter your pledge
               </p>
               <div class="pledge-amount">
-                <input type="text">
+                <input type="text" class="amount">
                 <label class="static-value">$</label>
               </div>
               <input class="btn inactive" type="submit" value="Continue"></input>
             </form>
           </div>
           <!-- Selected pledge end -->
+        
+        
         </div>
       </div>
 
@@ -282,7 +297,7 @@
 
 
     <!-- Success modal start -->
-    <div class="success pop-up-container">
+    <div class="success">
       <img src="./sources/images/icon-check.svg" alt="check-icon">
       <h4>
         Thanks for your support!
