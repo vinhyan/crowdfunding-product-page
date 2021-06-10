@@ -10,8 +10,13 @@ const overlay = document.querySelector('.overlay');
 const radioBtns = document.querySelectorAll('.default-radio');
 const borders = document.querySelectorAll('.border');
 const submitPledgeForms = document.querySelectorAll('.pledge-form');
+const forms = document.querySelectorAll('form');
 const successModal = document.querySelector('.success');
 const successCloseBtn = document.querySelector('.success .cyan-continue');
+const amountInputs = document.querySelectorAll('.amount');
+const backedAmount = document.querySelector('.backed-amount');
+const noOfBackers = document.querySelector('.no-of-backers');
+const noOfrewardsLeft = document.querySelectorAll('.reward-no-small');
 
 
 
@@ -29,7 +34,6 @@ const app = () => {
         } 
         
     });
-
     
 
     const open = () => {
@@ -61,6 +65,10 @@ const app = () => {
             
         })
 
+        forms.forEach(form => {
+            form.reset();
+        })
+
         successModal.classList.remove('activate');
 
     };
@@ -83,7 +91,6 @@ const app = () => {
 
     rewardButtons.forEach(rewardButton => {
         
-        const currentBtnId = rewardButton.id;
         rewardButton.addEventListener('click', (e) => {
             e.preventDefault();
             open();
@@ -143,14 +150,37 @@ const app = () => {
       
     })
 
+    let currentValue = 89914;
+
+    amountInputs.forEach(input => {
+
+        input.addEventListener('change', (e) => {
+            const inputValue = Number(e.target.value);
+            const newValue = currentValue + inputValue;
+            currentValue = newValue;
+            backedAmount.textContent = `$${currentValue.toLocaleString()}`;
+            
+        })
+        
+        
+        
+    })
+
+    let currentBackers = 5007;
 
     submitPledgeForms.forEach(form => {
+        
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             close();
             successModal.classList.add('activate');
             overlay.classList.add('overlay-active');
             body.classList.add('modal-on');
+            currentBackers++;
+            noOfBackers.textContent = currentBackers.toLocaleString();
+           
+
+   
 
             
         })

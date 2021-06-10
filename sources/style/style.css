@@ -90,6 +90,8 @@ nav {
 
 .mobile-nav {
     display: block;
+    
+
 }
 
 .nav-menu {
@@ -112,6 +114,8 @@ nav {
     list-style: none;
     height: 33%;
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -237,6 +241,10 @@ nav {
     border-radius: 12px;
    
     
+}
+
+.about {
+    margin-bottom: 5vh;
 }
 
 .about h3 {
@@ -526,7 +534,7 @@ form {
     color: var(--gray);
 }
 
-input[type=text]:focus {
+input[type=number]:focus, input[type=text]:focus {
     outline: none;
     border: solid 2px var(--dark-cyan);
     
@@ -536,6 +544,14 @@ input[type=text]::placeholder {
     color: var(--light-gray);
 }
 
+/* button {
+    border: none;
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+} */
 
 input[type=submit] {
     border: none;
