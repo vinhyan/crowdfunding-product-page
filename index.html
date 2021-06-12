@@ -75,7 +75,7 @@
       </p>
       
       <div class="proj-container">
-        <div class="proj-title-wrap">
+        <div class="project-title-wrap-main">
           <h4>
             Bamboo Stand
           </h4>
@@ -96,7 +96,7 @@
       </div>
     
       <div class="proj-container">
-        <div class="proj-title-wrap">
+        <div class="project-title-wrap-main">
           <h4>
             Black Edition Stand
           </h4>
@@ -117,7 +117,7 @@
       </div>
     
       <div class="proj-container unavailable">
-        <div class="proj-title-wrap">
+        <div class="project-title-wrap-main">
           <h4>
             Mahogany Special Edition
           </h4>
@@ -146,9 +146,9 @@
     <div class="project-modal pop-up-container">
       <div class="close">&times;</div>
       <div class="content-box">
-        <h4>
+        <h3>
           Back this project
-        </h4>
+        </h3>
         <p>
           Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
         </p>
@@ -156,13 +156,15 @@
         <div class="border">
           <div class="proj-modal-container">
             <div class="project-title-wrap">
-              <div class="radio-container">
-                <input type="radio" name="back-type" value="no-reward" class="default-radio" id="no-reward">
+              <label for="no-reward" class="radio-container">
+                <input type="radio" name="back-type" value="no-reward" class="default-radio" id="no-reward"/>
                 <span class="radio-btn"></span>
-              </div>
-              <label for="no-reward">
-                Pledge with no reward
               </label>
+              <div class="project-label-wrap">
+                <label for="no-reward">
+                  Pledge with no reward
+                </label>
+              </div>
             </div>
             <p>
               Choose to support us without a reward if you simply believe in our project. As a backer, 
@@ -177,8 +179,8 @@
               </p>
               <div class="subscribe">
                 <input type="text" class="email" placeholder="Email" required></input>
-              </div>
-              <input class="btn cyan-continue" type="submit" value="Subscribe!"></input>
+                <input class="btn cyan-continue" type="submit" value="Subscribe!"></input>
+            </div>
             </form>
           <!-- Selected pledge end -->  
           </div>
@@ -187,11 +189,11 @@
         <div class="border">
           <div class="proj-modal-container">
             <div class="project-title-wrap">
-              <div class="radio-container">
-                <input type="radio" name="back-type" value="bamboo-stand" class="default-radio" id="bamboo-stand">
+              <label for="bamboo-stand" class="radio-container">
+                <input type="radio" name="back-type" value="bamboo-stand" class="default-radio" id="bamboo-stand"/>
                 <span class="radio-btn"></span>
-              </div>
-              <div>
+              </label>
+              <div class="project-label-wrap">
                 <label for="bamboo-stand">
                   Bamboo Stand
                 </label>
@@ -205,9 +207,9 @@
               You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
               you’ll be added to a special Backer member list.
             </p>
-            <p>
+            <div class="pledge-no-wrap">
               <span class="reward-no-small" id="bamboo-slot">101</span> left
-            </p>
+            </div>
           </div>
           <!-- Selected pledge start -->
           <div class="pledge-container-top-line">
@@ -215,11 +217,13 @@
               <p>
                 Enter your pledge
               </p>
-              <div class="pledge-amount">
-                <input type="number" min="25" class="amount" required></input>
-                <label class="static-value">$</label>
+              <div class="pledge-amount-wrap">
+                <div class="pledge-amount">
+                  <input type="number" min="25" class="amount" required></input>
+                  <label class="static-value">$</label>
+                </div>
+                <input class="btn cyan-continue" type="submit" value="Continue" ></input>
               </div>
-              <input class="btn cyan-continue" type="submit" value="Continue" ></input>
             </form>
           </div>
           <!-- Selected pledge end -->
@@ -228,11 +232,11 @@
         <div class="border">
           <div class="proj-modal-container">
             <div class="project-title-wrap">
-              <div class="radio-container">
-                <input type="radio" name="back-type" value="black-edition-stand" class="default-radio" id="black-edition-stand">
+              <label for="black-edition-stand" class="radio-container">
+                <input type="radio" name="back-type" value="black-edition-stand" class="default-radio" id="black-edition-stand"/>
                 <span class="radio-btn"></span>
-              </div>
-              <div>
+              </label>
+              <div class="project-label-wrap">
                 <label for="black-edition-stand">
                   Black Edition Stand
                 </label>
@@ -245,9 +249,9 @@
               You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
               member list. Shipping is included.
             </p>
-            <p>
+            <div class="pledge-no-wrap">
               <span class="reward-no-small" id="black-edition-slot">64</span> left
-            </p>
+            </div>
           </div>
               <!-- Selected pledge start -->
           <div class="pledge-container-top-line">
@@ -255,11 +259,13 @@
               <p for="bamboo-stand">
                 Enter your pledge
               </p>
-              <div class="pledge-amount" >
-                <input type="number" min="75" class="amount" required></input>
-                <label class="static-value">$</label>
+              <div>
+                <div class="pledge-amount" >
+                  <input type="number" min="75" class="amount" required></input>
+                  <label class="static-value">$</label>
+                </div>
+                <input class="btn cyan-continue" type="submit" value="Continue"></input>
               </div>
-              <input class="btn cyan-continue" type="submit" value="Continue"></input>
             </form>
           </div>
               <!-- Selected pledge end -->
@@ -268,11 +274,11 @@
         <div class="border unavailable">
           <div class="proj-modal-container ">
             <div class="project-title-wrap">
-              <div class="radio-container">
-                <input type="radio" name="back-type" value="mahogany-stand" class="default-radio-inactive" id="mahogany-stand">
+              <label for="mahogany-stand" class="radio-container">
+                <input type="radio" name="back-type" value="mahogany-stand" class="default-radio-inactive" id="mahogany-stand"/>
                 <span class="radio-btn"></span>
-              </div>
-              <div>
+              </label>
+              <div class="project-label-wrap">
                 <label for="mahogany-stand">
                   Mahogany Special Edition
                 </label>
@@ -285,9 +291,9 @@
               You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
               to our Backer member list. Shipping is included.
             </p>
-            <p>
+            <div class="pledge-no-wrap">
               <span class="reward-no-small">0</span> left
-            </p>
+            </div>
           </div>
           <!-- Selected pledge  start -->
           <div class="pledge-container-top-line">
@@ -303,8 +309,6 @@
             </form>
           </div>
           <!-- Selected pledge end -->
-        
-        
         </div>
       </div>
 

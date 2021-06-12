@@ -128,7 +128,7 @@ const app = () => {
         const selectedPledge = selectedBorder.querySelector('.pledge-container-top-line');
         const currentBtnId = radioBtn.id;
         
-        radioBtn.addEventListener('click', () => {
+        radioBtn.addEventListener('change', () => {
 
             selectedBorder.classList.add('highlight');
             if (selectedPledge !== null) {

@@ -150,7 +150,7 @@ nav {
 
 
 .proj-overview {
-    top: -60px;
+    top: -75px;
     text-align: center;
 }
 
@@ -183,7 +183,7 @@ nav {
 
 .option-buttons-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .bookmark-desktop-wrap {
@@ -246,7 +246,7 @@ input:checked + .bookmark-btn::before {
 
 .statistic {
     text-align: center;
-    top: -30px;
+    top: -40px;
 }
 
 .statistic p {
@@ -265,8 +265,8 @@ input:checked + .bookmark-btn::before {
 
 .line {
     width: 70px;
-    height: 1px;
-    background-color: var(--gray);
+    height: 2px;
+    background-color: var(--light-gray);
     margin: 15px auto;
 }
 
@@ -452,10 +452,12 @@ input:checked + .bookmark-btn::before {
     align-items: center;
 }
 
-.project-title-wrap label {
+.project-label-wrap label {
     font-weight: 700;
     display: block;
     cursor: pointer;
+    padding-left: 15px;
+    padding-bottom: 5px;
 }
 
 
@@ -467,7 +469,7 @@ input:checked + .bookmark-btn::before {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     width: 25px;
     height: 25px;
     
@@ -664,10 +666,10 @@ input[type=submit] {
 }
 
 
-@media screen and (max-width: 1440px) and (min-width: 875px) {
+@media screen and (min-width: 950px) {
     header {
         background-image: url(../images/image-hero-desktop.jpg);
-        min-height: 75vh;
+        min-height: 50vh;
         padding: 5vh 20vh;
     }
 
@@ -723,6 +725,21 @@ input[type=submit] {
         padding: 40px;
     }
 
+    .statistic {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .statistic p {
+        width: 30%;
+    }
+
+    .statistic .line {
+        transform: rotate(-90deg);
+        
+    }
+
     .option-buttons-box {
         display: flex;
         justify-content: space-between;
@@ -760,7 +777,7 @@ input[type=submit] {
         right: 0;
         margin: 0;
         border-radius: 50px;
-        /* transition: transform 0.5s ease-in; */
+        transition: background-color 0.5s ease-in;
         /* width: 56px;
         height: 56px; */
         pointer-events: none;
@@ -815,8 +832,12 @@ input[type=submit] {
         color: var(--light-gray);
     }
 
+    .proj-modal-container {
+        position: relative;
+    }
 
-    .proj-title-wrap {
+
+    .project-title-wrap-main {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -829,8 +850,41 @@ input[type=submit] {
 
     }
 
-    
-  
+    .content-box {
+        padding: 10px 50px;
+    }
+
+    .project-modal {
+        width: 55%;
+        
+    }
+
+    .project-label-wrap {
+        display: flex;
+    }
+
+    .proj-modal-container p {
+        position: relative;
+        left: 39px;
+        width: 90%;
+        margin: 0;
+    }
+
+    .pledge-no-wrap {
+        position: absolute;
+        right: 20px;
+        top: 17px;
+    }
+
+    .pledge-form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .success {
+        width: 35%;
+    }
 
 
 
