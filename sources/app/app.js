@@ -4,19 +4,21 @@ const nav = document.querySelector('nav');
 const backProjectBtn = document.querySelector('#back-project-btn');
 const projectModal = document.querySelector('.project-modal');
 const closeModal = document.querySelector('.close');
-const bookmark = document.querySelector('.bookmark-btn');
 const rewardButtons = document.querySelectorAll('.cyan-select');
 const overlay = document.querySelector('.overlay');
 const radioBtns = document.querySelectorAll('.default-radio');
 const borders = document.querySelectorAll('.border');
-const submitPledgeForms = document.querySelectorAll('.pledge-form');
+const pledgeForms = document.querySelectorAll('.pledge-form');
 const forms = document.querySelectorAll('form');
 const successModal = document.querySelector('.success');
-const successCloseBtn = document.querySelector('.success .cyan-continue');
+const successCloseBtn = document.querySelector('.success-close-btn');
 const amountInputs = document.querySelectorAll('.amount');
 const backedAmount = document.querySelector('.backed-amount');
 const noOfBackers = document.querySelector('.no-of-backers');
-const noOfrewardsLeft = document.querySelectorAll('.reward-no-small');
+const bambooRewardsLeft = document.querySelector('#bamboo-slot');
+const blackEditionRewardsLeft = document.querySelector('#black-edition-slot');
+const bambooRewardsLeftMain = document.querySelector('#bamboo-slot-main');
+const blackEditionRewardsLeftMain = document.querySelector('#black-edition-slot-main');
 
 
 
@@ -34,6 +36,8 @@ const app = () => {
         } 
         
     });
+
+
     
 
     const open = () => {
@@ -81,19 +85,28 @@ const app = () => {
 
     });
 
+
     closeModal.addEventListener('click', close);
 
-    bookmark.addEventListener('click', (e) => {
-        e.preventDefault();
-        bookmark.classList.toggle('bookmarked');
-        
-    });
 
     rewardButtons.forEach(rewardButton => {
+        const currentRewardBtnId = rewardButton.id;
+        const bambooRadioBtn = document.querySelector('#bamboo-stand');
+        const blackEditRadioBtn = document.querySelector('#black-edition-stand');
         
         rewardButton.addEventListener('click', (e) => {
             e.preventDefault();
             open();
+            if (currentRewardBtnId == 'bamboo-btn-main') {
+                bambooRadioBtn.checked = true;
+                bambooRadioBtn.closest('.border').classList.add('highlight');
+                bambooRadioBtn.closest('.border').querySelector('.pledge-container-top-line').classList.add('active');
+
+            } else if (currentRewardBtnId == 'black-edition-btn-main') {
+                blackEditRadioBtn.checked = true;
+                blackEditRadioBtn.closest('.border').classList.add('highlight');
+                blackEditRadioBtn.closest('.border').querySelector('.pledge-container-top-line').classList.add('active');
+            }
 
         });
 
@@ -105,16 +118,13 @@ const app = () => {
 
     });
 
-    
-
-    
 
 
 
-    radioBtns.forEach((radioBtn) => {
+
+    radioBtns.forEach(radioBtn => {
 
         const selectedBorder = radioBtn.closest('.border');
-        // const selectedPledge = selectedBorder.lastElementChild;
         const selectedPledge = selectedBorder.querySelector('.pledge-container-top-line');
         const currentBtnId = radioBtn.id;
         
@@ -125,29 +135,22 @@ const app = () => {
                 selectedPledge.classList.add('active');
             }
             
-
             radioBtns.forEach((btn) => { 
                 //skip if this is the current selected radio button
                 if (btn.id == currentBtnId) return; 
+
                 //remove the border highlight of the radio buttons that are not being selected
                 const notSelectedBorder = btn.closest('.border');
                 notSelectedBorder.classList.remove('highlight');
 
-                //remove pledge input when radio buttons are not being selected
+                //remove pledge card when radio buttons are not being selected
                 const notSelectedPledge = notSelectedBorder.querySelector('.pledge-container-top-line');
                 if (notSelectedPledge !== null) {
                     notSelectedPledge.classList.remove('active');
 
                 }
-                
-
-                
             })
-           
-            
         })
-
-      
     })
 
     let currentValue = 89914;
@@ -167,8 +170,11 @@ const app = () => {
     })
 
     let currentBackers = 5007;
+    let currentBambooSpots = 101;
+    let currentBlackEditSpots = 64;
 
-    submitPledgeForms.forEach(form => {
+    pledgeForms.forEach(form => {
+        const currentFormId = form.id;
         
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -178,9 +184,16 @@ const app = () => {
             body.classList.add('modal-on');
             currentBackers++;
             noOfBackers.textContent = currentBackers.toLocaleString();
-           
 
-   
+            if (currentFormId == 'bamboo-submit') {
+                currentBambooSpots--;
+                bambooRewardsLeft.textContent = currentBambooSpots;
+                bambooRewardsLeftMain.textContent = currentBambooSpots;
+            } else if (currentFormId == 'black-edition-submit') {
+                currentBlackEditSpots--;
+                blackEditionRewardsLeft.textContent = currentBlackEditSpots;
+                blackEditionRewardsLeftMain.textContent = currentBlackEditSpots;
+            }
 
             
         })
@@ -195,36 +208,6 @@ const app = () => {
 
 
     })
-
-
-
-
-
-
-
-
-
-
-        
-
- 
-        
-       
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
