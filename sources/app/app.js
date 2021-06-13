@@ -19,6 +19,8 @@ const bambooRewardsLeft = document.querySelector('#bamboo-slot');
 const blackEditionRewardsLeft = document.querySelector('#black-edition-slot');
 const bambooRewardsLeftMain = document.querySelector('#bamboo-slot-main');
 const blackEditionRewardsLeftMain = document.querySelector('#black-edition-slot-main');
+const modalContentBox = document.querySelector('.content-box');
+const progressionBar = document.querySelector('.progress');
 
 
 
@@ -36,6 +38,8 @@ const app = () => {
         } 
         
     });
+
+
 
 
     
@@ -77,12 +81,13 @@ const app = () => {
 
     };
 
-   
+    
 
     backProjectBtn.addEventListener('click', (e) => {
         e.preventDefault();
         open();
-
+        modalContentBox.scrollTo(0, 0);
+       
     });
 
 
@@ -93,23 +98,28 @@ const app = () => {
         const currentRewardBtnId = rewardButton.id;
         const bambooRadioBtn = document.querySelector('#bamboo-stand');
         const blackEditRadioBtn = document.querySelector('#black-edition-stand');
+
         
         rewardButton.addEventListener('click', (e) => {
             e.preventDefault();
             open();
+
             if (currentRewardBtnId == 'bamboo-btn-main') {
+                const offsetTop = bambooRadioBtn.closest('.border').offsetTop;
+                modalContentBox.scrollTo(0, offsetTop);
                 bambooRadioBtn.checked = true;
                 bambooRadioBtn.closest('.border').classList.add('highlight');
                 bambooRadioBtn.closest('.border').querySelector('.pledge-container-top-line').classList.add('active');
 
             } else if (currentRewardBtnId == 'black-edition-btn-main') {
+                const offsetTop = blackEditRadioBtn.closest('.border').offsetTop;
+                modalContentBox.scrollTo(0, offsetTop);
                 blackEditRadioBtn.checked = true;
                 blackEditRadioBtn.closest('.border').classList.add('highlight');
                 blackEditRadioBtn.closest('.border').querySelector('.pledge-container-top-line').classList.add('active');
+                
             }
-
         });
-
     });
 
     overlay.addEventListener('click', () => {
@@ -134,12 +144,16 @@ const app = () => {
             if (selectedPledge !== null) {
                 selectedPledge.classList.add('active');
             }
+
+            selectedBorder.scrollIntoView();
             
+
+
             radioBtns.forEach((btn) => { 
                 //skip if this is the current selected radio button
                 if (btn.id == currentBtnId) return; 
 
-                //remove the border highlight of the radio buttons that are not being selected
+                //remove the container border highlight of the radio buttons that are not being selected
                 const notSelectedBorder = btn.closest('.border');
                 notSelectedBorder.classList.remove('highlight');
 
@@ -162,12 +176,29 @@ const app = () => {
             const newValue = currentValue + inputValue;
             currentValue = newValue;
             backedAmount.textContent = `$${currentValue.toLocaleString()}`;
+            let maxValue = 100000;
+            let progressionPercent = currentValue/maxValue * 100;
+            ;
+
+            progressionBar.style.width = `${progressionPercent > 100 ? 100 : progressionPercent}` + '%';
             
         })
         
-        
-        
     })
+
+    const successModalOpen = () => {
+        successModal.classList.add('activate');
+        overlay.classList.add('overlay-active');
+        body.classList.add('modal-on');
+
+    }
+    
+
+    
+
+    
+
+
 
     let currentBackers = 5007;
     let currentBambooSpots = 101;
@@ -178,10 +209,10 @@ const app = () => {
         
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
             close();
-            successModal.classList.add('activate');
-            overlay.classList.add('overlay-active');
-            body.classList.add('modal-on');
+            successModalOpen();
+
             currentBackers++;
             noOfBackers.textContent = currentBackers.toLocaleString();
 
@@ -199,6 +230,8 @@ const app = () => {
         })
     })
 
+    
+
     successCloseBtn.addEventListener('click', (e) => {
         e.preventDefault();
         successModal.classList.remove('activate');
@@ -208,6 +241,7 @@ const app = () => {
 
 
     })
+
 
 
 }

@@ -287,7 +287,7 @@ input:checked + .bookmark-btn::before {
     display: block;
     position: relative;
     height: 100%;
-    width: 80%;
+    width: 90%;
     background-color: var(--cyan);
     overflow: hidden;
     border-radius: 12px;
@@ -597,13 +597,13 @@ form {
     color: var(--gray);
 }
 
-input[type=number]:focus, input[type=text]:focus {
+input[type=number]:focus, input[type=email]:focus {
     outline: none;
     border: solid 2px var(--dark-cyan);
     
 }
 
-input[type=text]::placeholder {
+input[type=email]::placeholder {
     color: var(--light-gray);
 }
 
