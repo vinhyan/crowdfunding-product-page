@@ -145,7 +145,11 @@ const app = () => {
                 selectedPledge.classList.add('active');
             }
 
-            selectedBorder.scrollIntoView();
+            const offsetTop = selectedBorder.offsetTop;
+
+            modalContentBox.scrollTo(0, offsetTop);
+
+            // selectedBorder.scrollIntoView();
             
 
 
