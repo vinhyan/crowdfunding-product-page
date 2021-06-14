@@ -23,11 +23,16 @@ body {
     font-size: 16px;
     font-family: 'Commissioner', sans-serif;
     background-color: rgb(235, 235, 235);
+    color: var(--gray);
 }
 
 body.modal-on {
     overflow: hidden;
 
+}
+
+body h2, body h3, body h4 {
+    color: black;
 }
 
 body a {
@@ -249,17 +254,11 @@ input:checked + .bookmark-btn::before {
     top: -40px;
 }
 
-.statistic p {
-    padding: 10px;
-}
 
-
-.backed-amount, .no-of-backers, .days-left {
+.statistic h2 {
     color: black;
-    font-weight: 700;
     font-size: 2rem;
-    display: block;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     
 }
 
@@ -458,6 +457,11 @@ input:checked + .bookmark-btn::before {
     cursor: pointer;
     padding-left: 15px;
     padding-bottom: 5px;
+    
+}
+
+.black-text {
+    color: black;
 }
 
 
