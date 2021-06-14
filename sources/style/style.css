@@ -254,6 +254,10 @@ input:checked + .bookmark-btn::before {
     top: -40px;
 }
 
+.statistic-wrap {
+    padding-bottom: 25px;
+}
+
 
 .statistic h2 {
     color: black;
@@ -733,7 +737,6 @@ input[type=submit] {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-bottom: 10px;
     }
 
     .statistic p {
