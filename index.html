@@ -33,7 +33,7 @@
       <div class="option-buttons-box">
         <a class="btn cyan-select" id="back-project-btn" href="#">Back this project</a>
         <label for="bookmark" class="bookmark-desktop-wrap">
-          <input type="checkbox" name="bookmark" class="checkbox"/>
+          <input type="checkbox" name="bookmark" class="checkbox" id="bookmark"/>
           <span class="bookmark-btn"><img class="bookmark-icon" src="./sources/images/icon-bookmark.svg" alt="bookmark-button"></span>
         </label>
       </div>
@@ -181,8 +181,8 @@
                 Receive the latest news and updates about our products
               </p>
               <label for="email" class="subscribe">
-                <input type="email" name="email" class="email" placeholder="Email" required></input>
-                <input class="btn cyan-continue" type="submit" value="Subscribe!"></input>
+                <input type="email" name="email" class="email" placeholder="Email" id="email" required></input>
+                <button class="btn cyan-continue" type="submit" >Subscribe!</button>
             </label>
             </form>
           <!-- Selected pledge end -->  
@@ -222,7 +222,7 @@
               </p>
               <div class="pledge-amount-wrap">
                 <div class="pledge-amount">
-                  <input type="number" name="bamboo" min="25" class="amount" required></input>
+                  <input type="number" name="bamboo" min="25" class="amount" id="bamboo" aria-label="bamboo-pledge-amount" required></input>
                   <label for="bamboo" class="static-value">$</label>
                 </div>
                 <input class="btn cyan-continue" type="submit" value="Continue" ></input>
@@ -264,7 +264,7 @@
               </p>
               <div>
                 <div class="pledge-amount" >
-                  <input type="number" name="black-edition-stand" min="75" class="amount" required></input>
+                  <input type="number" name="black-edition-stand" min="75" class="amount" aria-label="black-edition-pledge-amount" required></input>
                   <label for="black-edition-stand" class="static-value">$</label>
                 </div>
                 <input class="btn cyan-continue" type="submit" value="Continue"></input>
@@ -305,7 +305,7 @@
                 Enter your pledge
               </p>
               <div class="pledge-amount">
-                <input type="number" name="mahogany-stand" class="amount" required></input>
+                <input type="number" name="mahogany-stand" class="amount" aria-label="mahogany-pledge-amount" required></input>
                 <label for="mahogany-stand" class="static-value">$</label>
               </div>
               <input class="btn inactive" type="submit" value="Continue"></input>

@@ -617,7 +617,7 @@ input[type=email]::placeholder {
 
 
 
-input[type=submit] {
+input[type=submit], button {
     border: none;
     font-family: 'Commissioner', sans-serif;
     font-size: 1rem;
