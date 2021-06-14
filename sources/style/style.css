@@ -739,13 +739,13 @@ input[type=submit] {
         justify-content: center;
     }
 
-    .statistic p {
+    .statistic .numbers {
         width: 30%;
     }
 
     .statistic .line {
         transform: rotate(-90deg);
-        
+
     }
 
     .option-buttons-box {
